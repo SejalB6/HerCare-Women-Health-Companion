@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'api',  
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,10 +77,15 @@ WSGI_APPLICATION = 'healthapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hercare_db',        # the database name you will create
+        'USER': 'postgres',          # your postgres username (default is postgres)
+        'PASSWORD': '1234',  # the password you set when installing PostgreSQL
+        'HOST': 'localhost',         # usually localhost
+        'PORT': '5432',              # default postgres port
     }
 }
+
 
 
 # Password validation
